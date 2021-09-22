@@ -1,4 +1,11 @@
 ---
+- name: CONFIGURE | Disable location
+  community.general.dconf:
+    key: "/org/gnome/system/location/enabled"
+    value: "{{ location_enabled }}"
+    state: present
+  when: location_enabled is defined
+
 - name: CONFIGURE | Disable camera
   community.general.dconf:
     key: "/org/gnome/desktop/privacy/disable-camera"

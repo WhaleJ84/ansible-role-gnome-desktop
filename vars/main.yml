@@ -27,6 +27,7 @@ show_in_lock_screen: "false"
 show_battery_percentage: "true"
 
 # Privacy
+location_enabled: "false"
 disable_camera: "true"
 disable_microphone: "true"
 
