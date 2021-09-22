@@ -1,0 +1,7 @@
+---
+- name: CONFIGURE | Enable Night Light
+  community.general.dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled"
+    value: "{{ night_light_enabled }}"
+    state: present
+  when: night_light_enabled is defined

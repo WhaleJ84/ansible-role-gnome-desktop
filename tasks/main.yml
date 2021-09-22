@@ -20,7 +20,7 @@
     #    - configure_sharing.yml
     - configure_sound.yml
     - configure_power.yml
-    #    - configure_displays.yml
+    - configure_displays.yml
     - configure_mouse_and_touchpad.yml
     - configure_keyboard.yml
     #    - configure_printers.yml

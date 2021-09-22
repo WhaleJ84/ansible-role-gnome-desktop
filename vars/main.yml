@@ -32,3 +32,6 @@ disable_microphone: "true"
 
 # Sound
 audible_bell: "false"
+
+# Display
+night_light_enabled: "true"
