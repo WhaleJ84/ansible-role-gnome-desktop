@@ -1,0 +1,34 @@
+---
+- name: INSTALL | Install dconf-editor
+  become: True
+  ansible.builtin.dnf:
+    name: dconf-editor
+    state: latest
+  when: ansible_facts['os_family'] == "RedHat" and install_editor == True
+
+- include_tasks: "{{ item }}"
+  loop:
+    #    - configure_wifi.yml
+    #    - configure_network.yml
+    #    - configure_bluetooth.yml
+    - configure_background.yml
+    - configure_notifications.yml
+    #    - configure_search.yml
+    - configure_applications_calendar.yml
+    - configure_privacy.yml
+    #    - configure_online_accounts.yml
+    #    - configure_sharing.yml
+    - configure_sound.yml
+    - configure_power.yml
+    #    - configure_displays.yml
+    - configure_mouse_and_touchpad.yml
+    - configure_keyboard.yml
+    #    - configure_printers.yml
+    #    - configure_removable_media.yml
+    #    - configure_colour.yml
+    #    - configure_region_and_language.yml
+    #    - configure_accessibility.yml
+    #    - configure_users.yml
+    #    - configure_default_applications.yml
+    - configure_date_and_time.yml
+

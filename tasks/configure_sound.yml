@@ -1,0 +1,10 @@
+---
+# Disables the annoying backspace noise on an empty shell.
+# Not sure what else it disables.
+- name: CONFIGURE | Disable system bell
+  community.general.dconf:
+    key: "/org/gnome/desktop/wm/preferences/audible-bell"
+    value: "{{ audible_bell }}"
+    state: present
+  when: audible_bell is defined
+

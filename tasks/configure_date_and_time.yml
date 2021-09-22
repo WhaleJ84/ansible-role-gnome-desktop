@@ -1,0 +1,15 @@
+---
+- name: CONFIGURE | Show seconds in clock
+  community.general.dconf:
+    key: "/org/gnome/desktop/interface/clock-show-seconds"
+    value: "{{ clock_show_seconds }}"
+    state: present
+  when: clock_show_seconds is defined
+
+- name: CONFIGURE | Show weekday in clock
+  community.general.dconf:
+    key: "/org/gnome/desktop/interface/clock-show-weekday"
+    value: "{{ clock_show_weekday }}"
+    state: present
+  when: clock_show_weekday is defined
+

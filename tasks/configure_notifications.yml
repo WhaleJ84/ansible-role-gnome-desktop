@@ -1,0 +1,8 @@
+---
+- name: CONFIGURE | Prevent notifications showing on lock screen
+  community.general.dconf:
+    key: "/org/gnome/desktop/notifications/show-in-lock-screen"
+    value: "{{ show_in_lock_screen }}"
+    state: present
+  when: show_in_lock_screen is defined
+

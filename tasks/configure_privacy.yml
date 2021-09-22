@@ -1,0 +1,15 @@
+---
+- name: CONFIGURE | Disable camera
+  community.general.dconf:
+    key: "/org/gnome/desktop/privacy/disable-camera"
+    value: "{{ disable_camera }}"
+    state: present
+  when: disable_camera is defined
+
+- name: CONFIGURE | Disable microphone
+  community.general.dconf:
+    key: "/org/gnome/desktop/privacy/disable-microphone"
+    value: "{{ disable_microphone }}"
+    state: present
+  when: disable_microphone is defined
+

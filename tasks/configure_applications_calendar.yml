@@ -1,0 +1,8 @@
+---
+- name: CONFIGURE | Show weekdate in calendar
+  community.general.dconf:
+    key: "/org/gnome/desktop/calendar/show-weekdate"
+    value: "{{ show_weekdate }}"
+    state: present
+  when: show_weekdate is defined
+

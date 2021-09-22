@@ -1,0 +1,34 @@
+---
+# Background
+picture_uri: "'file:///usr/share/backgrounds/fedora-workstation/corn.jpg'"
+
+# Calendar
+show_weekdate: "true"
+
+# Clock
+clock_show_seconds: "true"
+clock_show_weekday: "true"
+
+
+# Keybindings
+close: "['<Super><Shift>q']"
+toggle_fullscreen: "['<Super>f']"
+search: "['<Super>d']"
+
+# Mouse
+enable_hot_corners: "false"
+focus_mode: "'sloppy'"
+speed: "1.0"
+
+# Notifications
+show_in_lock_screen: "false"
+
+# Power
+show_battery_percentage: "true"
+
+# Privacy
+disable_camera: "true"
+disable_microphone: "true"
+
+# Sound
+audible_bell: "false"
