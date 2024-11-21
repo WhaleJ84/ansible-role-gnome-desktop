@@ -11,10 +11,9 @@
     value: "{{ wm_preferences.focus_mode | default(None) }}"
     state: "{{ 'present' if wm_preferences.focus_mode is defined else 'absent' }}"
 
-- name: CONFIGURE | Change mouse speed
+- name: CONFIGURE | Ensure mouse speed is configured when set
   community.general.dconf:
     key: "/org/gnome/desktop/peripherals/mouse/speed"
-    value: "{{ speed }}"
-    state: present
-  when: speed is defined
+    value: "{{ peripherals_mouse.speed | default(None) }}"
+    state: "{{ 'present' if peripherals_mouse.speed is defined else 'absent' }}"
 

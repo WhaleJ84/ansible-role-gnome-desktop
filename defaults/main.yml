@@ -28,6 +28,8 @@ notifications:
   show_in_lock_screen:
 peripherals_keyboard:
   numlock_state:
+peripherals_mouse:
+  speed:
 peripherals_touchpad:
   disable_while_typing:
   tap_to_click:
