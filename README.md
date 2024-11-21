@@ -1,7 +1,7 @@
-Gnome Settings
+gnome-desktop
 =========
 
-Configures Gnome settings for the user.
+Installs and configures gnome-desktop for the user.
 
 Requirements
 ------------
@@ -11,6 +11,23 @@ The following collections are required:
 - community.general
 
 They can be installed by running `ansible-galaxy collection install $COLLECTION`.
+
+To include this role in your `requirements.yml` file, add the following list item:
+
+```yaml
+---
+roles:
+  - name: whalej84.gnome-terminal
+    src: https://github.com/WhaleJ84/ansible-role-gnome-terminal.git
+    scm: git
+
+  - name: whalej84.psutil
+    src: https://github.com/WhaleJ84/ansible-role-psutil.git
+    scm: git
+
+collections:
+  - community.general
+```
 
 Role Variables
 --------------
@@ -24,7 +41,13 @@ Other variables are stored in `vars/main.yml`.
 Example Playbook
 ----------------
 
-    - hosts: localhost
-      roles:
-         - { role: whalej84.gnome-settings, install_editor: True }
+This example playbook shows how I would use this role, with custom variables to suit my needs.
+
+```yaml
+- hosts: localhost
+
+  roles:
+    role: whalej84.gnome-desktop
+    tags: [ gnome-desktop ]
+```
 
