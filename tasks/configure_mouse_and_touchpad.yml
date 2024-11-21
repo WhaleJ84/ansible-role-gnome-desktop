@@ -2,9 +2,8 @@
 - name: CONFIGURE | Disable hot-corners
   community.general.dconf:
     key: "/org/gnome/desktop/interface/enable-hot-corners"
-    value: "{{ enable_hot_corners }}"
-    state: present
-  when: interface.enable_hot_corners is defined
+    value: "{{ interface.enable_hot_corners | default(None) }}"
+    state: "{{ 'present' if interface.enable_hot_corners is defined else 'absent' }}"
 
 - name: CONFIGURE | Focus window via mouse
   community.general.dconf:
