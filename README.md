@@ -17,8 +17,8 @@ To include this role in your `requirements.yml` file, add the following list ite
 ```yaml
 ---
 roles:
-  - name: whalej84.gnome-terminal
-    src: https://github.com/WhaleJ84/ansible-role-gnome-terminal.git
+  - name: whalej84.gnome-desktop
+    src: https://github.com/WhaleJ84/ansible-role-gnome-desktop.git
     scm: git
 
   - name: whalej84.psutil
