@@ -8,9 +8,8 @@
 - name: CONFIGURE | Focus window via mouse
   community.general.dconf:
     key: "/org/gnome/desktop/wm/preferences/focus-mode"
-    value: "{{ focus_mode }}"
-    state: present
-  when: focus_mode is defined
+    value: "{{ wm_preferences.focus_mode | default(None) }}"
+    state: "{{ 'present' if wm_preferences.focus_mode is defined else 'absent' }}"
 
 - name: CONFIGURE | Change mouse speed
   community.general.dconf:
