@@ -4,3 +4,9 @@
     key: "/org/gnome/desktop/background/picture-uri"
     value: "'{{ background.picture_uri | default(None) }}'"
     state: "{{ 'present' if background.picture_uri is defined else 'absent' }}"
+
+- name: CONFIGURE | Set dark desktop background
+  community.general.dconf:
+    key: "/org/gnome/desktop/background/picture-uri-dark"
+    value: "'{{ background.picture_uri_dark | default(None) }}'"
+    state: "{{ 'present' if background.picture_uri_dark is defined else 'absent' }}"
