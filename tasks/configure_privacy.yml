@@ -2,21 +2,18 @@
 - name: CONFIGURE | Disable location
   community.general.dconf:
     key: "/org/gnome/system/location/enabled"
-    value: "{{ location_enabled }}"
-    state: present
-  when: location_enabled is defined
+    value: "{{ system.location_enabled | default(None) }}"
+    state: "{{ 'present' if system.location_enabled is defined else 'absent' }}"
 
 - name: CONFIGURE | Disable camera
   community.general.dconf:
     key: "/org/gnome/desktop/privacy/disable-camera"
-    value: "{{ disable_camera }}"
-    state: present
-  when: disable_camera is defined
+    value: "{{ privacy.disable_camera | default(None) }}"
+    state: "{{ 'present' if privacy.disable_camera is defined else 'absent' }}"
 
 - name: CONFIGURE | Disable microphone
   community.general.dconf:
     key: "/org/gnome/desktop/privacy/disable-microphone"
-    value: "{{ disable_microphone }}"
-    state: present
-  when: disable_microphone is defined
+    value: "{{ privacy.disable_microphone | default(None) }}"
+    state: "{{ 'present' if privacy.disable_microphone is defined else 'absent' }}"
 
