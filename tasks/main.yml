@@ -36,3 +36,4 @@
       #    - configure_users.yml
       #    - configure_default_applications.yml
       - configure_date_and_time.yml
+      - configure_interface.yml
