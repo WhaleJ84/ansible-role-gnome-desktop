@@ -1,0 +1,12 @@
+---
+- name: CONFIGURE | Set RDP enabled state
+  community.general.dconf:
+    key: "/org/gnome/desktop/remote-desktop/rdp/enable"
+    value: "{{ remote_desktop_rdp.enable | default(None) }}"
+    state: "{{ 'present' if remote_desktop_rdp.enable is defined else 'absent' }}"
+
+- name: CONFIGURE | Set VNC enabled state
+  community.general.dconf:
+    key: "/org/gnome/desktop/remote-desktop/vnc/enable"
+    value: "{{ remote_desktop_vnc.enable | default(None) }}"
+    state: "{{ 'present' if remote_desktop_vnc.enable is defined else 'absent' }}"

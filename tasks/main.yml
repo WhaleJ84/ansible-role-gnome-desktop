@@ -38,3 +38,4 @@
       - configure_date_and_time.yml
       - configure_interface.yml
       - configure_peripherals.yml
+      - configure_remote_desktop.yml
