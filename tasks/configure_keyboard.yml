@@ -2,21 +2,18 @@
 - name: CONFIGURE | Change close window keybinding to Super+Shift+q
   community.general.dconf:
     key: "/org/gnome/desktop/wm/keybindings/close"
-    value: "{{ close }}"
-    state: present
-  when: close is defined
+    value: "{{ wm_keybindings.close | default(None) }}"
+    state: "{{ 'present' if wm_keybindings.close is defined else 'absent' }}"
 
 - name: CONFIGURE | Change toggle fullscreen keybinding to Super+f
   community.general.dconf:
     key: "/org/gnome/desktop/wm/keybindings/toggle-fullscreen"
-    value: "{{ toggle_fullscreen }}"
-    state: present
-  when: toggle_fullscreen is defined
+    value: "{{ wm_keybindings.toggle_fullscreen | default(None) }}"
+    state: "{{ 'present' if wm_keybindings.toggle_fullscreen is defined else 'absent' }}"
 
 - name: CONFIGURE | Change search keybinding to Super+d
   community.general.dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/search"
-    value: "{{ search }}"
-    state: present
-  when: search is defined
+    value: "{{ _settings_daemon_plugins_media_keys.search | default(None) }}"
+    state: "{{ 'present' if _settings_daemon_plugins_media_keys.search is defined else 'absent' }}"
 
