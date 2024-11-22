@@ -1,0 +1,7 @@
+---
+- name: CONFIGURE | Set desktop icon visibility
+  community.general.dconf:
+    key: "/org/gnome/desktop/background/show-desktop-icons"
+    value: "{{ background.show_desktop_icons | default(None) }}"
+    state: "{{ 'present' if background.show_desktop_icons is defined else 'absent' }}"
+
