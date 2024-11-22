@@ -2,8 +2,8 @@
 - name: CONFIGURE | Disable location
   community.general.dconf:
     key: "/org/gnome/system/location/enabled"
-    value: "{{ system.location_enabled | default(None) }}"
-    state: "{{ 'present' if system.location_enabled is defined else 'absent' }}"
+    value: "{{ _system_location.enabled | default(None) }}"
+    state: "{{ 'present' if _system_location.enabled is defined else 'absent' }}"
 
 - name: CONFIGURE | Disable camera
   community.general.dconf:
