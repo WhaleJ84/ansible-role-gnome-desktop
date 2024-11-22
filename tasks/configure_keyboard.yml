@@ -17,3 +17,9 @@
     value: "{{ _settings_daemon_plugins_media_keys.search | default(None) }}"
     state: "{{ 'present' if _settings_daemon_plugins_media_keys.search is defined else 'absent' }}"
 
+- name: CONFIGURE | Set terminal keybinding
+  community.general.dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/terminal"
+    value: "{{ _settings_daemon_plugins_media_keys.terminal | default(None) }}"
+    state: "{{ 'present' if _settings_daemon_plugins_media_keys.terminal is defined else 'absent' }}"
+
