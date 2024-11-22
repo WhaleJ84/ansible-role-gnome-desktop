@@ -1,58 +1,58 @@
 ---
-background:
-  color_shading_type:
-  picture_opacity:
-  picture_options:
-  picture_uri:
-  picture_uri_dark:
-  primary_color:
-  secondary_color:
-  show_desktop_icons:
-calendar:
-  show_weekdate:
-datetime:
-  automatic_timezone:
-interface:
-  avatar_directories:
-  can_change_accels:
-  clock_format:
-  clock_show_date:
-  clock_show_seconds:
-  clock_show_weekday:
-  color_scheme:
-  gtk_theme:
-  icon_theme:
-  show_battery_percentage:
-  text_scaling_factor:
-notifications:
-  show_in_lock_screen:
-peripherals_keyboard:
-  numlock_state:
+#background:
+#  color_shading_type:
+#  picture_opacity:
+#  picture_options:
+#  picture_uri:
+#  picture_uri_dark:
+#  primary_color:
+#  secondary_color:
+#  show_desktop_icons:
+#calendar:
+#  show_weekdate:
+#datetime:
+#  automatic_timezone:
+#interface:
+#  avatar_directories:
+#  can_change_accels:
+#  clock_format:
+#  clock_show_date:
+#  clock_show_seconds:
+#  clock_show_weekday:
+#  color_scheme:
+#  gtk_theme:
+#  icon_theme:
+#  show_battery_percentage:
+#  text_scaling_factor:
+#notifications:
+#  show_in_lock_screen:
+#peripherals_keyboard:
+#  numlock_state:
 #peripherals_mouse:
 #  speed:
-peripherals_touchpad:
-  disable_while_typing:
-  tap_to_click:
-privacy:
-  disable_camera:
-  disable_microphone:
-remote_desktop_rdp:
-  enable:
-_settings_daemon_plugins_color:
-  night_light_enabled:
-_settings_daemon_plugins_media_keys:
-  search:
-_system_location:
-  enabled:
-screensaver:
-  picture_uri:
-search_providers:
-  disable_external:
-wm_keybindings:
-  close:
-  switch_to_workspace_left:
-  switch_to_workspace_right:
-  toggle_fullscreen:
-wm_preferences:
-  audible_bell:
+#peripherals_touchpad:
+#  disable_while_typing:
+#  tap_to_click:
+#privacy:
+#  disable_camera:
+#  disable_microphone:
+#remote_desktop_rdp:
+#  enable:
+#_settings_daemon_plugins_color:
+#  night_light_enabled:
+#_settings_daemon_plugins_media_keys:
+#  search:
+#_system_location:
+#  enabled:
+#screensaver:
+#  picture_uri:
+#search_providers:
+#  disable_external:
+#wm_keybindings:
+#  close:
+#  switch_to_workspace_left:
+#  switch_to_workspace_right:
+#  toggle_fullscreen:
+#wm_preferences:
+#  audible_bell:
 install_editor: False
