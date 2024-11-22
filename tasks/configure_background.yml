@@ -2,6 +2,5 @@
 - name: CONFIGURE | Set desktop background
   community.general.dconf:
     key: "/org/gnome/desktop/background/picture-uri"
-    value: "{{ picture_uri }}"
-    state: present
-  when: picture_uri is defined
+    value: "{{ background.picture_uri | default(None) }}"
+    state: "{{ 'present' if background.picture_uri is defined else 'absent' }}"
