@@ -1,0 +1,19 @@
+---
+- name: CONFIGURE | Set numlock state
+  community.general.dconf:
+    key: "/org/general/desktop/peripherals/keyboard/numlock-state"
+    value: "{{ peripherals_keyboard.numlock_state | default(None) }}"
+    state: "{{ 'present' if peripherals_keyboard.numlock_sate is defined else 'absent' }}"
+
+- name: CONFIGURE | Set touchpad state while typing
+  community.general.dconf:
+    key: "/org/general/desktop/peripherals/touchpad/disable-while-typing"
+    value: "{{ peripherals_touchpad.disable_while_typing | default(None) }}"
+    state: "{{ 'present' if peripherals_touchpad.disable_while_typing is defined else 'absent' }}"
+
+- name: CONFIGURE | Set tap to click state
+  community.general.dconf:
+    key: "/org/general/desktop/peripherals/touchpad/tap-to-click"
+    value: "{{ peripherals_touchpad.tap_to_click | default(None) }}"
+    state: "{{ 'present' if peripherals_touchpad.tap_to_click is defined else 'absent' }}"
+
