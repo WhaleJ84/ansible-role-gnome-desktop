@@ -5,3 +5,15 @@
     value: "{{ interface.color_scheme | default(None) }}"
     state: "{{ 'present' if interface.color_scheme is defined else 'absent' }}"
 
+- name: CONFIGURE | Set GTK theme
+  community.general.dconf:
+    key: "/org/gnome/desktop/interface/gtk-theme"
+    value: "{{ interface.gtk_theme | default(None) }}"
+    state: "{{ 'present' if interface.gtk_theme is defined else 'absent' }}"
+
+- name: CONFIGURE | Set icon theme
+  community.general.dconf:
+    key: "/org/gnome/desktop/interface/gtk-theme"
+    value: "{{ interface.icon_theme | default(None) }}"
+    state: "{{ 'present' if interface.icon_theme is defined else 'absent' }}"
+
