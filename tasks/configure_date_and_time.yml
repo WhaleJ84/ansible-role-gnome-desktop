@@ -17,3 +17,9 @@
     value: "{{ datetime.automatic_timezone | default(None) }}"
     state: "{{ 'present' if datetime.automatic_timezone is defined else 'absent' }}"
 
+- name: CONFIGURE | Set clock format
+  community.general.dconf:
+    key: "/org/gnome/desktop/interface/clock-format"
+    value: "{{ interface.clock_format | default(None) }}"
+    state: "{{ 'present' if interface.clock_format is defined else 'absent' }}"
+
