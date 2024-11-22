@@ -1,0 +1,7 @@
+---
+- name: CONFIGURE | Set color scheme
+  community.general.dconf:
+    key: "/org/gnome/desktop/interface/color-scheme"
+    value: "{{ interface.color_scheme | default(None) }}"
+    state: "{{ 'present' if interface.color_scheme is defined else 'absent' }}"
+
