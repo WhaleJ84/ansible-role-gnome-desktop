@@ -11,3 +11,9 @@
     value: "{{ interface.clock_show_weekday | default(None) }}"
     state: "{{ 'present' if interface.clock_show_weekday is defined else 'absent' }}"
 
+- name: CONFIGURE | Set automatic timezone
+  community.general.dconf:
+    key: "/org/gnome/desktop/datetime/automatic-timezone"
+    value: "{{ datetime.automatic_timezone | default(None) }}"
+    state: "{{ 'present' if datetime.automatic_timezone is defined else 'absent' }}"
+
