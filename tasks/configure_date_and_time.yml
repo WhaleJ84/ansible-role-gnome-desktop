@@ -3,11 +3,11 @@
   community.general.dconf:
     key: "/org/gnome/desktop/interface/clock-show-seconds"
     value: "{{ interface.clock_show_seconds | default(None) }}"
-    state: "{ 'present' if interface.clock_show_seconds is defined else 'absent' }"
+    state: "{{ 'present' if interface.clock_show_seconds is defined else 'absent' }}"
 
 - name: CONFIGURE | Show weekday in clock
   community.general.dconf:
     key: "/org/gnome/desktop/interface/clock-show-weekday"
     value: "{{ interface.clock_show_weekday | default(None) }}"
-    state: "{ 'present' if interface.clock_show_weekday is defined else 'absent' }"
+    state: "{{ 'present' if interface.clock_show_weekday is defined else 'absent' }}"
 
