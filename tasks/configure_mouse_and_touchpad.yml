@@ -14,6 +14,6 @@
 - name: CONFIGURE | Ensure mouse speed is configured when set
   community.general.dconf:
     key: "/org/gnome/desktop/peripherals/mouse/speed"
-    value: "{{ peripherals_mouse.speed | default('0') }}"
+    value: "{{ peripherals_mouse.speed | default(None) }}"
     state: "{{ 'present' if peripherals_mouse.speed is defined else 'absent' }}"
 
