@@ -2,7 +2,6 @@
 - name: CONFIGURE | Show battery percentage
   community.general.dconf:
     key: "/org/gnome/desktop/interface/show-battery-percentage"
-    value: "{{ show_battery_percentage }}"
-    state: present
-  when: show_battery_percentage is defined
+    value: "{{ interface.show_battery_percentage | default(None) }}"
+    state: "{{ 'present' if interface.show_battery_percentage is defined else 'absent' }}"
 
