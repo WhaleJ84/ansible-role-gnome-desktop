@@ -10,3 +10,10 @@
     key: "/org/gnome/desktop/background/picture-uri-dark"
     value: "{{ background.picture_uri_dark | default(None) }}"
     state: "{{ 'present' if background.picture_uri_dark is defined else 'absent' }}"
+
+- name: CONFIGURE | Set screensaver background
+  community.general.dconf:
+    key: "/org/gnome/desktop/screensaver/picture_uri"
+    value: "{{ screensaver.picture_uri | default(None) }}"
+    state: "{{ 'present' if screensaver.picture_uri is defined else 'absent' }}"
+

@@ -1,0 +1,7 @@
+---
+- name: CONFIGURE | Set pinned dock apps
+  community.general.dconf:
+    key: "/org/gnome/shell/favorite-apps"
+    value: "{{ _shell.favorite_apps | default(None) }}"
+    state: "{{ 'present' if _shell.favorite_apps is defined else 'absent' }}"
+
