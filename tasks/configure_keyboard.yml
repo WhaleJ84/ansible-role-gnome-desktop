@@ -23,3 +23,14 @@
     value: "{{ _settings_daemon_plugins_media_keys.terminal | default(None) }}"
     state: "{{ 'present' if _settings_daemon_plugins_media_keys.terminal is defined else 'absent' }}"
 
+- name: CONFIGURE | Set switch to workspace left keybinding
+  community.general.dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-left"
+    value: "{{ wm_keybindings.switch_to_workspace_left | default(None) }}"
+    state: "{{ 'present' if wm_keybindings.switch_to_workspace_left is defined else 'absent' }}"
+
+- name: CONFIGURE | Set switch to workspace right keybinding
+  community.general.dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-right"
+    value: "{{ wm_keybindings.switch_to_workspace_right | default(None) }}"
+    state: "{{ 'present' if wm_keybindings.switch_to_workspace_right is defined else 'absent' }}"
