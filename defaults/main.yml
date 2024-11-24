@@ -48,6 +48,8 @@
 #  enabled:
 #screensaver:
 #  picture_uri:
+#shell_extensions_ding:
+#  show_home:
 #search_providers:
 #  disable_external:
 #wm_keybindings:

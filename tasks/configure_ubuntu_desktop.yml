@@ -5,3 +5,9 @@
     value: "{{ background.show_desktop_icons | default(None) }}"
     state: "{{ 'present' if background.show_desktop_icons is defined else 'absent' }}"
 
+- name: CONFIGURE | Set home folder visibility
+  community.general.dconf:
+    key: "/org/gnome/shell/extensions/ding/show-home"
+    value: "{{ shell_extensions_ding.show_home | default(None) }}"
+    state: "{{ 'present' if shell_extensions_ding.show_home is defined else 'absent' }}"
+
